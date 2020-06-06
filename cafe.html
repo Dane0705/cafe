@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./slick-master/slick.css">
+    <link rel="stylesheet" href="./slick-master/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="slick-master/slick/slick.min.js"></script>
+    <style>
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+                nav{
+            height: 60px;
+            width: 100%;
+            background-color: rgb(247, 247, 247);
+            line-height: 60px;
+            font-size: 14px;
+            position: fixed;
+            z-index: 999;
+        }
+        .logo{
+            float: left;
+            margin-left: 100px;
+        }
+        #menu{
+            float: left;
+            margin-left: 40px;
+        }
+        #menu li{
+            float: left;
+        }
+        #menu a,
+        #menu a:hover{
+            color: black;
+            text-decoration: none;
+            display: block;
+            /* width: 120px; */
+            margin-left: 40px;
+        }
+        .collapes{
+            position: absolute;
+            left: auto;
+            width: 120px;
+            background-color: rgba(0, 0, 0, 0.726);
+        }
+        .collapes li{
+            height: 40px;
+            width: 120px;
+        }
+        .collapes a{
+            color: rgb(218, 218, 218) !important;
+            margin-left: 10px !important;
+            line-height: 40px;
+        }
+        .collapes a:hover{
+            color: white !important;
+        }
+        .login{
+            float: right;
+            margin-right: 100px;
+        }
+        /* ***************************************** */
+        header img{
+            width: 100%;
+            margin-top: 60px;
+        }
+        /* ***************************************** */
+        article{
+            margin-top: 100px;
+        }
+        article .line{
+            display: inline-block;
+            height: 60px;
+            width: 2px;
+            background-color:#FDB813;
+        }
+        article .news{
+            float: left;
+        }
+        article .more{
+            display: inline-block;
+            color: #999999;
+            text-decoration: none;
+            font-size: 16px;
+            float: right;
+        }
+        article .main{
+            font-size: 18px;
+        }
+        article a:hover{
+            text-decoration: none;
+        }
+        article .a_item{
+            width: 100%;
+            min-height: 70px;
+            padding: 20px 15px 20px 50px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #333333;
+            border-bottom: 1px solid #dddddd;
+        }
+        article .date,
+        article .date:hover{
+            width: 135px;
+            padding-right: 50px;
+            color: #999999;
+        }
+        article .type{
+            width: 190px;
+            padding-right: 50px;
+            color: #999999;
+        }
+        article .txt:hover{
+            width: calc(100% - 325px);
+            color: #FDB813;
+        }
+        /* ***************************************** */
+        #banner img{
+            width: 100%;
+            height: 100%;
+        }
+        #banner .s-box{
+            position: relative;
+        }
+        #banner .text{
+            font-size: 14px;
+            height: 70px;
+            bottom: 20px;
+            color: #ffffff;
+            position: absolute;
+            /* transform: translateX(60%); */
+        }
+        #banner .text-2{
+            font-size: 14px;
+            height: 70px;
+            bottom: 20px;
+            color: #ffffff;
+            position: absolute;
+            /* transform: translateX(60%); */
+        }
+        #banner .text-4{
+            font-size: 14px;
+            height: 70px;
+            bottom: 20px;
+            color: #ffffff;
+            position: absolute;
+            /* transform: translateX(50%); */
+        }
+        #banner .text-5{
+            font-size: 14px;
+            height: 70px;
+            bottom: 20px;
+            color: #ffffff;
+            position: absolute;
+            /* transform: translateX(20%); */
+        }
+        /* ***************************************** */
+        #banner-2 {
+            margin-top: 100px;
+            display: block;
+        }
+        #banner-2 a{
+            display: block;
+            background-color: black;
+        }
+        #banner-2 img{
+            width: 100%;
+        }
+        #banner-2 img:hover{
+            opacity: .8;
+        }
+        #banner-2 .bp{
+            position: relative;
+        }
+        #banner-2 .banner-txt{
+            position: absolute;
+            color: white;
+            bottom: 5px;
+            left: 30px;
+            font-size: 14px;
+        }
+        /* ****************footer-desktop******************** */
+        footer{
+            background-color: rgb(236, 236, 236);
+            margin-top: 100px;
+        }
+        footer .icon{
+            width: 14px;
+        }
+        footer .contact a{
+            color: black;
+            text-decoration: none;
+        }
+        /* ****************footer-mobile********************* */
+        .item-region a{
+            text-decoration: none;
+            color: #333;
+        }
+        .item-region ul{
+            padding: 0;
+            left: 0;
+            margin: 0px;
+            display: inline-block;
+            margin: auto;
+            text-align: center;
+        }
+        .item-region li{
+            width: calc(100% / 3);
+            float: left;
+            text-align: center;
+        }
+        /* ************************************************** */
+        .download img{
+            width: 70px;
+            text-shadow: black 2px 2px 2px;
+        }
+        .download{
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            z-index: 999;
+            display: inline-block;
+            box-shadow: 2px 2px 10px rgb(68, 68, 68);
+            border-radius: 50%;
+        }
+        .top{
+            position: fixed;
+            z-index: 999;
+            display: inline-block;
+            bottom: 50px;
+            right: 30px;
+            background-color: #FDB813;
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            opacity: .5;
+            line-height: 30px;
+        }
+        @media (min-width: 768px) 
+        {
+            
+        }
+    </style>
+        <script>
+            $(document).ready(function(){
+                $('.collapes').hide();
+                $('#menu li').hover(function(){
+                    $(this).find('ul').toggle();
+                });
+                $('.slider').slick({
+                    autoplay:true
+                });
+                $('.top').click(function(){
+                    $('html,body').animate({
+                        scrollTop : 0
+                    })
+                    return false
+                })
+                $(window).scroll(function(){
+                    let h = $(window).scrollTop();
+                    if(h>0){
+                        $('.top').fadeIn();
+                    }else{
+                        $('.top').fadeOut();
+                    }
+                })
+            })
+        </script>
+</head>
+<body>
+    <a href="#" class="top d-md-block d-none">
+        <i class="fas fa-angle-double-up" style="font-size: 20px;color:white;"></i>
+    </a>
+    <a href="#" class="download">
+        <img src="./img/下載.png" alt="">
+    </a>
+    <nav>
+        <div class="logo">
+            <img src="./img/header.png" alt="" style="width: 180px;">
+            <img src="./img/header_logo.png" alt="" style="width: 200px;">
+        </div>
+        <ul id="menu">
+            <li><a href="#">店內餐飲</a></li>
+            <li><a href="#">商品介紹</a>
+                <ul class="collapes">
+                    <li> <a href="#">咖啡豆</a></li>
+                    <li> <a href="#">濾掛式咖啡</a></li>
+                    <li> <a href="#">淨泡式咖啡</a></li>
+                    <li> <a href="#">咖啡器具</a></li>
+                    <li> <a href="#">個性商品</a></li>
+                    <li> <a href="#">禮盒</a></li>
+                    <li> <a href="#">優惠活動</a></li>
+                </ul>
+            </li>
+            <li><a href="#">最新消息</a></li>
+            <li><a href="#">門市資訊</a></li>
+            <li><a href="#">品牌資訊</a>
+                <ul class="collapes">
+                    <li><a href="#">關於cama</a></li>
+                </ul>
+            </li>
+            <li><a href="#">談咖啡</a></li>
+            <li><a href="#">聯絡我們</a>
+                <ul class="collapes">
+                    <li> <a href="#">填寫表單</a></li>
+                    <li> <a href="#">人才招募</a></li>
+                    <li> <a href="#">企業採購</a></li>
+                    <li> <a href="#">加盟專區</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="login">
+            <a href="#" class="pr-3"><img src="./img/car.svg" alt="" style="width: 30px;"></a>
+            <a href="#"><img src="./img/user.svg" alt="" style="width: 30px;"></a>
+        </div>
+    </nav>
+    <header class="slider">
+        <img src="./img/banner-1.jpeg" alt="">
+        <img src="./img/banner-2.jpeg" alt="">
+        <img src="./img/banner-3.jpeg" alt="">
+        <img src="./img/banner-5.jpeg" alt="">
+        <img src="./img/banner-last.jpeg" alt="">
+    </header>
+    <article class="container-fluid d-md-block d-none">
+        <div class="container">
+            <div class="row">
+                <div class="title col-12 text-center">
+                    <span class="line mb-5"></span>
+                    <h5 class="mb-5" style="color: #FDB813;">享受·自在·生活</h5>
+                    <p class="mb-5" style="font-size: 20px ; color : rgb(133, 133, 133);">Enjoy your life with a cup of coffee.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 pb-4" style="border-bottom: #dddddd 1px solid;">
+                    <h5 class="news">最新消息</h5>
+                    <a href="#" class="more">More></a>
+                </div>
+                <div class="w-100">
+                    <a href="#" class="a_item">
+                        <div class="date">2020/05/08</div>
+                        <div class="type">最新活動</div>
+                        <div class="txt">新品上市｜食感新境界 紓壓飲品「黑絲絨系列」上市</div>
+                    </a>
+                    <a href="#" class="a_item">
+                        <div class="date">2020/04/30</div>
+                        <div class="type">最新活動</div>
+                        <div class="txt">官網限定｜冷萃的季節！cama浸泡式咖啡75折 再送保溫瓶</div>
+                    </a>
+                    <a href="#" class="a_item">
+                        <div class="date">2020/04/22</div>
+                        <div class="type">最新活動</div>
+                        <div class="txt">cama café振興優惠券 3,000元發送中</div>
+                    </a>
+                    <a href="#" class="a_item">
+                        <div class="date">2019/07/23</div>
+                        <div class="type">新店開幕</div>
+                        <div class="txt">New Open！竹北文興店開幕囉～</div>
+                    </a>
+                    <a href="#" class="a_item">
+                        <div class="date">2020/01/06</div>
+                        <div class="type">好康</div>
+                        <div class="txt">新春加碼｜cama pay 綁王道聯名卡 點數五倍送</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div id="banner" class="container-fluid" style="margin-top: 100px;">
+            <div class="row pl-5 pr-5">
+                <div class=" s-box slider col-md-6 col-12  text-center">
+                    <div>
+                        <img src="img/b1-1.jpeg" alt="">
+                        <div class="text">
+                            <p>現烘黑咖啡</p>
+                            <p>黑咖啡、拿鐵、卡布奇諾、焦糖瑪起朵</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/b1-2.jpeg" alt="">
+                        <div class="text-2">
+                            <p>風味飲品</p>
+                            <p>英倫早餐茶、花草茶、皇室奶茶、純釀烏梅汁</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/b1-3.jpeg" alt="">
+                        <div class="text">
+                            <p>經典現烘手沖咖啡</p>
+                            <p>黃金曼巴、巧克力王子、花香椰加雪啡...</p>
+                        </div>
+                    </div>                    
+                </div>
+                <div class=" s-box slider col-md-6 col-12  text-center">
+                    <div>
+                        <img src="./img/b2-1.jpeg" alt="">
+                        <div class="text-4">
+                            <p>黃金曼特寧 Golden Mandheling</p>
+                            <p>濃郁的黑巧克力風味，層次豐富，集優雅的清爽與強勁</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/b2-2.jpeg" alt="">
+                        <div class="text-5">
+                            <p>黃金曼巴 Golden Mandheling and Brazil Blend</p>
+                            <p>國際權威 IIAC評鑑認證，更豐沛的層次感，核果調性的烤花生與桂圓香氣</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/b2-3.jpeg" alt="">
+                        <div class="text-5">
+                            <p>耶加雪啡 Yirgacheffe</p>
+                            <p>獨特的檸檬、花香和蜂蜜般的甜香氣，柔和的果酸與柑橘味，口感清新明亮</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-12 ">
+                    <h5 class="text-center mt-4" style="color: #333;">店內飲品</h5>
+                </div>
+                <div class="col-md-6 col-12 ">
+                    <h5 class="text-center mt-4" style="color: #333;">商品介紹</h5>
+                </div>
+            </div>
+    </div>
+    <div id="banner-2" class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-12 p-0">
+                <div class="col-12  p-1 bp">
+                    <a href="#">
+                        <img src="./img/b3-1.jpeg" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>檔期活動</p>
+                        <p>Promtion</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 p-1 bp" style="float: left;">
+                    <a href="#">
+                        <img src="./img/b3-1-1.jpeg" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>店內飲品</p>
+                        <p>Menu</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 p-1 bp" style="float: left;">
+                    <a href="#">
+                        <img src="./img/b3-1-2.jpeg" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>加盟專區</p>
+                        <p>Franchise</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 p-0">
+                <div class="col-md-6 col-12 p-1 bp" style="float: left;">
+                    <a href="#">
+                        <img src="./img/b3-2-1.jpeg" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>門市資訊</p>
+                        <p>Stores</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 p-1 bp" style="float: left;">
+                    <a href="#">
+                        <img src="./img/b3-2-2.jpeg" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>關於cama</p>
+                        <p>About cama</p>
+                    </div>
+                </div>
+                <div class="col-12 p-1 bp" style="clear: both;">
+                    <a href="#">
+                        <img src="./img/b3-3.jpeg" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>商品介紹</p>
+                        <p>Product</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer desktop---------------------------------------------------------------->
+    <footer class="container-fluid d-lg-block d-none">
+        <div class="container">
+        <div class="row">
+            <div class="contact col-12">
+                <div class="col-4" style="float: left;">
+                    <img src="./img/footer_logo.png" alt="" style="margin-top: 50px;">
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="col-6" style="float: left;">
+                            <ul style="margin-top: 50px;font-size: 14px;">
+                                <li class="py-2">總公司</li>
+                                <li class="py-2"><a href="#"><img src="./img/map-marker-alt-solid-01.png" alt="" class="icon mr-3"> 台北市大安區安和路一段 xx 號 xx 樓</a></li>
+                                <li class="py-2"><a href="#"><img src="./img/phone-solid-01.png" alt="" class="icon mr-3"> 08xx-x6x-xx6 ( 週一 ~ 週五 09:00~18:00 )</a></li>
+                                <li class="py-2"><a href="#"><img src="./img/envelope-regular-01.png" alt="" class="icon mr-3"> xxxxxx@camacafe.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-2 ml-5" style="float: left;">
+                            <ul style="margin-top: 85px;font-size: 14px;">
+                                <li class="py-2"><a href="#">隱私權政策</a></li>
+                                <li class="py-2"><a href="#">常見問題</a></li>
+                                <li class="py-2"><a href="#">加入我們</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-2 ml-5" style="float: left;">
+                            <ul style="margin-top: 85px;font-size: 14px;">
+                                <li class="py-2"><a href="#">加盟資訊</a></li>
+                                <li class="py-2"><a href="#">企業採購</a></li>
+                                <li class="py-2"><a href="#">門市查詢</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-2" style="margin-top: 50px;">
+                <p style="font-size: 14px;color: #999999;float: left;">© 此為個人練習，不具任何商業用途</p>
+                <div class="c-icons" style="float:right">
+                    <a href="#"><i class="fab fa-facebook-square pr-3 " style="font-size: 30px;color: rgb(170, 170, 170);"></i></a>
+                    <a href="#"><i class="fab fa-line pr-3 " style="font-size: 30px;color: rgb(170, 170, 170);"></i></a>
+                    <a href="#"><i class="fab fa-instagram pr-3 " style="font-size: 30px;color: rgb(170, 170, 170);"></i></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- footer mobile---------------------------------------------------------------->
+    <footer class="container-fluid footer-mobile d-lg-none d-block">
+        <div class="row my-0">
+            <div class="icons-region mx-auto text-center mt-2">
+                <a href="#"><img src="./img/footer_logo.png" alt=""></a>
+                <a href="#"><i class="fab fa-facebook-square pr-3 " style="font-size: 40px;color: rgb(170, 170, 170);"></i></a>
+                <a href="#"><i class="fab fa-line pr-3 " style="font-size: 40px;color: rgb(170, 170, 170);"></i></a>
+                <a href="#"><i class="fab fa-instagram pr-3 " style="font-size: 40px;color: rgb(170, 170, 170);"></i></a>
+            </div>
+            <div class="item-region mt-4">
+                <ul>
+                    <li><a href="#">隱私權政策</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">加入我們</a></li>
+                    <li><a href="#">加盟資訊</a></li>
+                    <li><a href="#">企業採購</a></li>
+                    <li><a href="#">門市查詢</a></li>
+                </ul>
+            </div>
+            <div class="contact mx-auto text-center">
+                <ul style="font-size: 14px;">
+                    <li class="py-2"><a href="#"><img src="./img/map-marker-alt-solid-01.png" alt="" class="icon mr-3"> 台北市大安區安和路一段 xx 號 xx 樓</a></li>
+                    <li class="py-2"><a href="#"><img src="./img/phone-solid-01.png" alt="" class="icon mr-3"> 08xx-x6x-xx6 ( 週一 ~ 週五 09:00~18:00 )</a></li>
+                    <li class="py-2"><a href="#"><img src="./img/envelope-regular-01.png" alt="" class="icon mr-3"> xxxxxx@camacafe.com</a></li>
+                </ul>
+            </div>
+            <p style="font-size: 14px;color: #999999" class="mx-auto text-center">© 此為個人練習，不具任何商業用途</p>
+        </div>
+    </footer>
+</body>
+</html>
